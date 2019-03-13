@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remove Link Breaks</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/javascript">
+function removeLineBreaks(){
+    
+    var lines = $('#inputText').val().replace(/(\r\n|\n|\r)/gm," ").replace(/\s+/g," ");
+    document.getElementById("outputText").value = lines;
+    
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3325476-169"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-3325476-169');
+</script>
+</head>
+<body>
+<h1>Remove Link Breaks</h1>
+<p>Input</p>
+<p><textarea cols="80" rows="10" onclick="this.select()" id="inputText"></textarea></p>
+<p>Output</p>
+<p><textarea cols="80" rows="10" onclick="this.select()" style="background-color: #eee" id="outputText" readonly></textarea></p>
+<p><button onclick="removeLineBreaks()">Process</button></p>
+<p style="padding-top: 20px; font-size: x-small"><a href="/">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</a></p>
+</body>
+</html>
