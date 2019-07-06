@@ -18,7 +18,7 @@ class Aa {
 
     public function __construct() {
         $this->hostname = 'http://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com';
-        $this->connection = new PDO('mysql:dbname=MYSQL_DATABASE_NAME;host=localhost', 'MYSQL_DATABASE_USER', 'MYSQL_DATABASE_USER_PASSWORD');
+        $this->connection = nnew PDO('mysql:dbname=MYSQL_DATABASE_NAME;host=localhost', 'MYSQL_DATABASE_USER', 'MYSQL_DATABASE_USER_PASSWORD');
 		$this->chars = 'aA';
     }
 
@@ -121,36 +121,26 @@ class Aa {
                 else {
                     $url = $this->hostname.'/'.$this->encode($result['id']);
                 }
-				
-				exit('<a rel="nofollow noopener noreferrer" target="_blank" href="'.$url.'">'.$url.'</a>');
-            }
-            else {
-				exit();
+
+				echo '<a rel="nofollow noopener noreferrer" target="_blank" href="'.$url.'">'.$url.'</a>';
             }
         }
 
         else {
-            if (empty($q)) {
-			  exit();
-            }
-
-            if (preg_match('/^([a-zA-Z0-9]+)$/', $q, $matches)) {
-                $id = self::decode($matches[1]);
-                $result = $this->fetch($id);
-
-                if (!empty($result)) {
-                    $this->update($id);
-                    $this->redirect($result['url']);
-                }
-                else {
-					exit();
+            if ($q) {
+                if (preg_match('/^([a-zA-Z0-9]+)$/', $q, $matches)) {
+                    $id = self::decode($matches[1]);
+                    $result = $this->fetch($id);
+    
+                    if (!empty($result)) {
+                        $this->update($id);
+                        $this->redirect($result['url']);
+                    }
                 }
             }
         }
     }
 }
 
+echo '</body></html>';
 ?>
-
-</body>
-</html>
