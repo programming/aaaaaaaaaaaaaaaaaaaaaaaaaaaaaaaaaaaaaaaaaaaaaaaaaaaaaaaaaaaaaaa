@@ -4,7 +4,22 @@ Set up your own url _shortening_ service like [AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 ## Installation
 
-Upload the files to any LAMP/LEMP server. Import the sql file and update the database configuration information accordingly.
+Upload the files to your web directory. Import the sql file and update the database configuration information accordingly.
+
+For **Apache**:
+
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?q=$1 [QSA,L]
+
+For **Nginx**:
+
+    server {
+        location / {
+            rewrite ^/(.*)$ /index.php?q=$1;
+        }
+    }
 
 That's pretty much it. Have fun.
 
