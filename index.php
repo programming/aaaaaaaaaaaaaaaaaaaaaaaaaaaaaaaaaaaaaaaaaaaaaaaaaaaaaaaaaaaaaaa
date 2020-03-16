@@ -18,7 +18,7 @@ class Aa {
 
     public function __construct() {
         $this->hostname = 'http://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com';
-        $this->connection = nnew PDO('mysql:dbname=MYSQL_DATABASE_NAME;host=localhost', 'MYSQL_DATABASE_USER', 'MYSQL_DATABASE_USER_PASSWORD');
+        $this->connection = new PDO('mysql:dbname=MYSQL_DATABASE_NAME;host=localhost', 'MYSQL_DATABASE_USER', 'MYSQL_DATABASE_USER_PASSWORD');
 		$this->chars = 'aA';
     }
 
