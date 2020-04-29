@@ -7,7 +7,7 @@
 <title>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</title>
 </head>
 <body>
-<div style="top:0;right:15px;position:fixed" onclick="halp()">&#8617;</div>	
+<div style="top:0;right:15px;position:fixed" onclick="halp()">&#8617;&#65038;</div>	
 <h1>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
 <p>Are your URLs too short? Lengthen your URLs conveniently and share your links without ambiguity (<em>"All As."</em>).</p>
 <p><form action="/" method="get"><input type="url" name="url" placeholder="Enter your URL..."> <input value="Lengthen" type="submit"></form></p>
