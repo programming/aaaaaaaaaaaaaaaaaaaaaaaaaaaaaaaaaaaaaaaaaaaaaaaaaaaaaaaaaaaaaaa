@@ -2,10 +2,13 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>function halp(){document.body.scrollLeft=0,document.documentElement.scrollLeft=0}$(document).scroll(function(){$(this).scrollLeft()&&$("h1").append("A")});</script>
 <title>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</title>
 </head>
 <body>
-<h1>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
+<div style="top:0;right:15px;position:fixed" onclick="halp()">&#8617;</div>	
+<h1>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
 <p>Are your URLs too short? Lengthen your URLs conveniently and share your links without ambiguity (<em>"All As."</em>).</p>
 <p><form action="/" method="get"><input type="url" name="url" placeholder="Enter your URL..."> <input value="Lengthen" type="submit"></form></p>
 
