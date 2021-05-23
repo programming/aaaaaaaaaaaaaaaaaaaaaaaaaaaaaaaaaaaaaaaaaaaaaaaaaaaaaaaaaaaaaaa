@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="jquery.js"></script>
+<script type="text/javascript">
+
+function halp() {
+    document.body.scrollLeft = 0, document.documentElement.scrollLeft = 0
+}
+$(document).scroll(function() {
+    $(this).scrollLeft() && $("h1").append("A")
+});
+
+function encode(string) {
+    return string.split('').map(function(char) {
+        var x = char.charCodeAt(0).toString(2);
+        if (x.length == 6) x = "0" + x;
+        return x;
+    }).join('').replaceAll('0', 'a').replaceAll('1', 'A');
+}
+
+function decode(string) {
+    return string.replaceAll('a', '0').replaceAll('A', '1').toString().match(/.{7}/g).join(' ').split(' ').map(function(val) {
+        return String.fromCharCode(parseInt(val, 2));
+    }).join("");;
+}
+
+function lengthen() {
+    var url = document.getElementById("url").value;
+    var valid = /^(ftp|http|https):\/\/[^ "]+$/.test(url);
+    if (url && valid) {
+        var redirect = window.location.href.split('#')[0] + '#' + encode(url);
+        document.getElementById('output').innerHTML = '<a target="_new" href="' + redirect + '">' + redirect + '</a>'
+    } else {
+        document.getElementById('output').innerHTML = "computer says no";
+    }
+}
+
+var pound = window.location.hash.substr(1);
+
+if (window.location.hash != "") {
+    var url = decode(pound);
+    var valid = /^(ftp|http|https):\/\/[^ "]+$/.test(url);
+    if (url != null && valid) window.location.href = url;
+}
+
+</script>
+<title>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</title>
+</head>
+<body>
+<div style="top:0;right:15px;position:fixed" onclick="halp()">&#8617;&#65038;</div>	
+<h1>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
+<p>Are your URLs too short? Lengthen your URLs conveniently and share your links without ambiguity (<em>"All As."</em>).</p>
+<p><input type="url" name="url" id="url" placeholder="Enter your URL..."> <button onclick="lengthen()">Lengthen</button></p>
+<p><div id="output"></div></p>
+</body>
+</html>
